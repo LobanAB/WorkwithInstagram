@@ -4,3 +4,4 @@ venv/
 images/
 .env
 config/
+main.py

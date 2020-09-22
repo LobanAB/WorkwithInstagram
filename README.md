@@ -16,11 +16,17 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 Для загрузки фотографий с api Hubble:
-```python fetch_hubble.py```
+```
+python fetch_hubble.py
+```
 Для загрузки фотографий с api SpaceX:
-```python fetch_spacex.py```
+```
+python fetch_spacex.py
+```
 Для загрузки фотографий в инстаграм:
-```python post_instagram.py```
+```
+python post_instagram.py
+```
 
 ### Цель проекта
 

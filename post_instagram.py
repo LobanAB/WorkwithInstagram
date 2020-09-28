@@ -11,6 +11,8 @@ def get_resize_image(path_to_image):
     image = Image.open(path_to_image)
     image.thumbnail((1080, 1080))
     utils.make_dir("images/thumbnail")
+    if image.mode != "RGB":
+        image = image.convert("RGB")
     image.save("images/thumbnail/%s.jpg" % img_name, format="JPEG")
 
 

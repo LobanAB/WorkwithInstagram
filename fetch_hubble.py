@@ -1,13 +1,9 @@
 import requests
-from pathlib import Path
-
-
-def make_dir(target_path):
-    Path(target_path).mkdir(parents=True, exist_ok=True)
+import utils
 
 
 def save_file(image, target_path, image_id):
-    make_dir(target_path)
+    utils.make_dir(target_path)
     image_name = image.split("/")[-1]
     filename = target_path + "/" + str(image_id) + image_name
     response = requests.get(image, verify=False)

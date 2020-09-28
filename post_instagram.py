@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 from PIL import Image
-from instabot import Bot  # noqa: E402
+from instabot import Bot
 import time
 
 

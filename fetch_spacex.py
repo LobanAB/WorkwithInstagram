@@ -3,11 +3,11 @@ import utils
 from pathlib import Path
 
 
-def save_file(image, target_path):
+def save_file(image_url, target_path):
     utils.make_dir(target_path)
-    image_name = image.split("/")[-1]
+    image_name = image_url.split("/")[-1]
     filename = target_path.joinpath(image_name)
-    response = requests.get(image, verify=False)
+    response = requests.get(image_url, verify=False)
     response.raise_for_status()
     with open(filename, 'wb') as file:
         file.write(response.content)

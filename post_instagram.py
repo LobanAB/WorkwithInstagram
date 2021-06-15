@@ -7,7 +7,7 @@ import utils
 from pathlib import Path
 
 
-def get_resize_image(path_to_image):
+def get_resized_image(path_to_image: Path):
     img_name = path_to_image.stem
     image = Image.open(path_to_image)
     image.thumbnail((1080, 1080))
@@ -20,10 +20,10 @@ def get_resize_image(path_to_image):
     )
 
 
-def prepare_images_for_posting(folder):
-    images = os.listdir(folder)
-    for image_name in images:
-        get_resize_image(folder.joinpath(image_name))
+def prepare_images_for_posting(directory):
+    images_names = os.listdir(directory)
+    for image_name in images_names:
+        get_resized_image(directory.joinpath(image_name))
 
 
 def main():

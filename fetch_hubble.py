@@ -16,8 +16,9 @@ def fetch_hubble_image(image_id_list: list, images_dir='images', images_subdir='
 
 
 def fetch_hubble_collection(collection_name='news'):
-    api_url = f"http://hubblesite.org/api/v3/images/{collection_name}?page=all"
-    response = requests.get(api_url)
+    api_url = f"http://hubblesite.org/api/v3/images/{collection_name}"
+    payload = {"page": 'all'}
+    response = requests.get(api_url, params=payload)
     response.raise_for_status()
     return [image["id"] for image in response.json()]
 

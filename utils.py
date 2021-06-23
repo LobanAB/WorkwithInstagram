@@ -2,11 +2,11 @@ from pathlib import Path
 import requests
 
 
-def make_dir(target_path):
+def make_dir(target_path: Path):
     Path(target_path).mkdir(parents=True, exist_ok=True)
 
 
-def save_image(image_url, target_path, image_id=''):
+def save_image(image_url: str, target_path: Path, image_id=''):
     make_dir(target_path)
     image_name = image_url.split("/")[-1]
     filename = target_path.joinpath(f'{image_id}{image_name}')

@@ -14,14 +14,14 @@ def save_resized_image(
         ig_image_height=1080,
         ig_image_width=1080):
     for path_to_image in path_to_image_list:
-        img_name = path_to_image.stem
+        image_name = path_to_image.stem
         image = Image.open(path_to_image)
         image.thumbnail((ig_image_width, ig_image_height))
         utils.make_dir(Path.cwd() / images_dir / images_thumbnail_subdir)
         if image.mode != "RGB":
             image = image.convert("RGB")
         image.save(
-            Path.cwd() / images_dir / images_thumbnail_subdir / (img_name + '.jpg'),
+            Path.cwd() / images_dir / images_thumbnail_subdir / f'{image_name}.jpg',
             format="JPEG"
         )
 
@@ -43,7 +43,7 @@ def post_to_instagram(
     bot.login(username=username, password=password, use_cookie=True)
     for image in images_for_posting:
         bot.upload_photo(
-            Path.cwd() / images_dir / (images_thumbnail_subdir + image),
+            Path.cwd() / images_dir / f'{images_thumbnail_subdir}{image}',
             caption=image
         )
         time.sleep(post_timeout_in_seconds)

@@ -28,8 +28,8 @@ def prepare_images_for_posting(directory):
 
 def main():
     load_dotenv()
-    username = os.getenv("LOGIN")
-    password = os.getenv("PASSWORD")
+    username = os.getenv("INSTAGRAM_LOGIN")
+    password = os.getenv("INSTAGRAM_PASSWORD")
     prepare_images_for_posting(Path.cwd() / 'images' / 'full_size')
     images_for_posting = os.listdir(Path.cwd() / 'images' / 'thumbnail')
     timeout_in_seconds = 60

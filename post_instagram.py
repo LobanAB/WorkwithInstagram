@@ -9,7 +9,7 @@ from instabot import Bot
 import utils
 
 
-def save_resized_image(
+def resize_image(
         path_to_image_list: list,
         images_dir='images',
         images_thumbnail_subdir='thumbnail',
@@ -62,7 +62,7 @@ def main():
     ig_image_height = 1080
     ig_image_width = 1080
     path_to_image_list = get_images_for_posting_list(Path.cwd() / images_dir / images_subdir)
-    save_resized_image(path_to_image_list, images_dir, images_thumbnail_subdir, ig_image_height, ig_image_width)
+    resize_image(path_to_image_list, images_dir, images_thumbnail_subdir, ig_image_height, ig_image_width)
     post_to_instagram(username, password, images_dir, images_thumbnail_subdir, post_timeout_in_seconds)
 
 

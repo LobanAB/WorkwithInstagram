@@ -8,6 +8,7 @@ def fetch_spacex_last_launch(images_dir='images', images_subdir='full_size'):
     response = requests.get(api_url)
     response.raise_for_status()
     images = response.json()["links"]["flickr_images"]
+    utils.make_dir(Path.cwd() / images_dir / images_subdir)
     for image in images:
         utils.save_image(image, Path.cwd() / images_dir / images_subdir)
 

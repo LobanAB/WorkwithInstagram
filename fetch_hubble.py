@@ -8,6 +8,7 @@ def fetch_hubble_image(image_id_list: list, images_dir='images', images_subdir='
         api_url = f"http://hubblesite.org/api/v3/image/{image_id}"
         response = requests.get(api_url)
         response.raise_for_status()
+        utils.make_dir(Path.cwd() / images_dir / images_subdir)
         utils.save_image(
             "http:" + response.json()["image_files"][0]["file_url"],
             Path.cwd() / images_dir / images_subdir,

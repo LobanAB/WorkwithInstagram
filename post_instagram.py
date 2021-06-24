@@ -20,11 +20,11 @@ def resize_image(
         image = Image.open(path_to_image)
         image.thumbnail((ig_image_width, ig_image_height))
         utils.make_dir(Path.cwd() / images_dir / images_thumbnail_subdir)
-        if image.mode != "RGB":
-            image = image.convert("RGB")
+        if image.mode != 'RGB':
+            image = image.convert('RGB')
         image.save(
             Path.cwd() / images_dir / images_thumbnail_subdir / f'{image_name}.jpg',
-            format="JPEG"
+            format='JPEG'
         )
 
 
@@ -53,8 +53,8 @@ def post_to_instagram(
 
 def main():
     load_dotenv()
-    username = os.getenv("INSTAGRAM_LOGIN")
-    password = os.getenv("INSTAGRAM_PASSWORD")
+    username = os.getenv('INSTAGRAM_LOGIN')
+    password = os.getenv('INSTAGRAM_PASSWORD')
     images_dir = 'images'
     images_subdir = 'full_size'
     images_thumbnail_subdir = 'thumbnail'

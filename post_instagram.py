@@ -1,10 +1,12 @@
 import os
-from dotenv import load_dotenv
-from PIL import Image
-from instabot import Bot
 import time
-import utils
+from dotenv import load_dotenv
 from pathlib import Path
+from PIL import Image
+
+from instabot import Bot
+
+import utils
 
 
 def save_resized_image(

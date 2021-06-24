@@ -1,5 +1,5 @@
-from pathlib import Path
 import requests
+from pathlib import Path
 
 
 def make_dir(target_path: Path):

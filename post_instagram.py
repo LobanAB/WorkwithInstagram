@@ -1,10 +1,10 @@
 import os
 import time
-from dotenv import load_dotenv
 from pathlib import Path
-from PIL import Image
 
+from dotenv import load_dotenv
 from instabot import Bot
+from PIL import Image
 
 import utils
 

@@ -9,12 +9,13 @@ from PIL import Image
 import utils
 
 
-def resize_image(
+def prepare_thumbnails_for_instagram(
         path_to_image_list: list,
         images_dir='images',
         images_thumbnail_subdir='thumbnail',
         ig_image_height=1080,
-        ig_image_width=1080):
+        ig_image_width=1080
+):
     for path_to_image in path_to_image_list:
         image_name = path_to_image.stem
         image = Image.open(path_to_image)
@@ -62,7 +63,7 @@ def main():
     ig_image_height = 1080
     ig_image_width = 1080
     path_to_image_list = get_images_for_posting_list(Path.cwd() / images_dir / images_subdir)
-    resize_image(path_to_image_list, images_dir, images_thumbnail_subdir, ig_image_height, ig_image_width)
+    prepare_thumbnails_for_instagram(path_to_image_list, images_dir, images_thumbnail_subdir, ig_image_height, ig_image_width)
     post_to_instagram(username, password, images_dir, images_thumbnail_subdir, post_timeout_in_seconds)
 
 
